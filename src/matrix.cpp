@@ -28,13 +28,13 @@ double Matrix::getn(unsigned short col, unsigned short row) {
 }
 
 Matrix Matrix::T() {
-    Matrix* res = new Matrix(this->cols, this->rows);
+    Matrix res(this->cols, this->rows);
 
     for (unsigned short r = 0; r < this->rows; r++)
         for (unsigned short c = 0; c < this->cols; c++)
-            *(res->get(r, c)) = this->getn(c, r);
+            *(res.get(r, c)) = this->getn(c, r);
 
-    return *res;
+    return res;
 }
 
 void Matrix::print() {
