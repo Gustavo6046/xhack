@@ -12,8 +12,9 @@ class Matrix
 
         Matrix operator* (Matrix B);
         Matrix T();
-        double* get(unsigned short x, unsigned short y);
-        double getn(unsigned short x, unsigned short y);
+        double* get(unsigned short col, unsigned short row);
+        double getn(unsigned short col, unsigned short row);
+        void setn(unsigned short col, unsigned short row, double n);
         void print();
 
         unsigned short rows;

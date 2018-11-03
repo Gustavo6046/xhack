@@ -18,13 +18,19 @@ Matrix::Matrix(unsigned short rows, unsigned short cols, double* data) {
         std::copy(data, data + this->rows * this->cols, this->data);
 }
 
-double* Matrix::get(unsigned short x, unsigned short y) {
-    return this->data + (y * this->cols + x);
+double* Matrix::get(unsigned short col, unsigned short row) {
+    if (col == 0 && row == 0) return this->data;
+    return this->data + (row * this->cols + col);
 }
 
 double Matrix::getn(unsigned short col, unsigned short row) {
     if (col == 0 && row == 0) return *this->data;
     return this->data[row * this->cols + col];
+}
+
+void Matrix::setn(unsigned short col, unsigned short row, double n) {
+    if (col == 0 && row == 0) this->data[0] = n;
+    this->data[row * this->cols + col] = n;
 }
 
 Matrix Matrix::T() {
@@ -64,7 +70,7 @@ Matrix Matrix::operator* (Matrix B) {
             for (unsigned short i = 0; i < this->cols; i++)
                 prod += this->getn(i, r1) * B.getn(r2, i);
 
-            *(res.get(r2, r1)) = prod;
+            res.setn(r2, r1, prod);
         }
 
     return res;
