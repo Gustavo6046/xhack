@@ -55,16 +55,14 @@ void Matrix::print() {
 
 Matrix Matrix::operator* (Matrix B) {
     assert(this->cols == B.rows);
-    Matrix t = B.T();
-
-    Matrix res(this->rows, t.rows);
+    Matrix res = Matrix(this->rows, B.cols, 0);
 
     for (unsigned short r1 = 0; r1 < this->rows; r1++)
-        for (unsigned short r2 = 0; r2 < t.rows; r2++) {
+        for (unsigned short r2 = 0; r2 < B.cols; r2++) {
             double prod = 0;
 
             for (unsigned short i = 0; i < this->cols; i++)
-                prod += this->getn(i, r1) * t.getn(i, r2);
+                prod += this->getn(i, r1) * B.getn(r2, i);
 
             *(res.get(r2, r1)) = prod;
         }

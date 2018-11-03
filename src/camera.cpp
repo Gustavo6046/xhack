@@ -58,10 +58,9 @@ ScreenPoint project(Camera& cam, double x, double y, double z) {
         z,
         1
     };
+
     Matrix colMat = Matrix(4, 1, arr);
-
     Matrix projM = projMat(cam);
-
     Matrix resM = projM * colMat;
     printf("( %f, %f, %f, %f ) &%p as matrix:\n", arr[0], arr[1], arr[2], arr[3], arr);
     colMat.print();
