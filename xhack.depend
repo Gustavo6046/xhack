@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1541258248 source:d:\projetos\xhack\main.cpp
+	<iostream>
+	"tiles.h"
+
+1541258160 source:d:\projetos\xhack\tiles.cpp
+	<assert.h>
+	<cstring>
+	"tiles.h"
+
+1541258891 source:d:\projetos\xhack\src\tiles.cpp
+	<assert.h>
+	<cstring>
+	"tiles.h"
+
+1541269941 source:d:\projetos\xhack\src\main.cpp
+	<iostream>
+	<cstdio>
+	"camera.h"
+
+1541258777 d:\projetos\xhack\include\tiles.h
+
+1541271025 source:d:\projetos\xhack\src\matrix.cpp
+	<assert.h>
+	<algorithm>
+	<iostream>
+	<iomanip>
+	<cstdio>
+	"matrix.h"
+
+1541261505 d:\projetos\xhack\include\matrix.h
+
+1541271934 source:d:\projetos\xhack\src\camera.cpp
+	<cmath>
+	<cstdio>
+	"camera.h"
+	"matrix.h"
+
