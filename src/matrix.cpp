@@ -61,7 +61,7 @@ void Matrix::print() {
 
 Matrix Matrix::operator* (Matrix B) {
     assert(this->cols == B.rows);
-    Matrix res = Matrix(this->rows, B.cols, 0);
+    Matrix res(this->rows, B.cols, 0);
 
     for (unsigned short r1 = 0; r1 < this->rows; r1++)
         for (unsigned short r2 = 0; r2 < B.cols; r2++) {
