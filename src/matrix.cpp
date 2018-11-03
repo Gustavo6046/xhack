@@ -57,7 +57,7 @@ Matrix Matrix::operator* (Matrix B) {
     assert(this->cols == B.rows);
     Matrix t = B.T();
 
-    Matrix* res = new Matrix(this->rows, t.rows);
+    Matrix res(this->rows, t.rows);
 
     for (unsigned short r1 = 0; r1 < this->rows; r1++)
         for (unsigned short r2 = 0; r2 < t.rows; r2++) {
@@ -66,10 +66,10 @@ Matrix Matrix::operator* (Matrix B) {
             for (unsigned short i = 0; i < this->cols; i++)
                 prod += this->getn(i, r1) * t.getn(i, r2);
 
-            *(res->get(r2, r1)) = prod;
+            *(res.get(r2, r1)) = prod;
         }
 
-    return *res;
+    return res;
 }
 
 Matrix::~Matrix() {
